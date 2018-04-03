@@ -12,9 +12,11 @@ Interface - ISubject has two method
   In Program.cs --
 
   Using the container: 
-  static IUnityContainer container = new UnityContainer();
+  
+   static IUnityContainer container = new UnityContainer();
   
   and Register the Isubject:
+  
         static void SetUpContainer()
         {
             container.RegisterType<ISubject, Math>();    // This means -- when you get ISubject, use Math
@@ -32,6 +34,7 @@ Interface - ISubject has two method
             Console.WriteLine("Reference Book: " + subject.GetReferenceBookName());
 
   With Unity, same can be achieved as :
+            
             SetUpContainer();
             ISubject sub = container.Resolve<ISubject>();
             Console.WriteLine("Unity : Subject Desc: " + sub.GetDescription());
